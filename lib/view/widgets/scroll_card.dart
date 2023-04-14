@@ -26,6 +26,47 @@ class ScrollCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.sp),
                 color: white,
               ),
+              padding: EdgeInsets.symmetric(
+                vertical: 23.sp,
+                horizontal: 19.sp,
+              ),
+              child: Expanded(
+                child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 5,
+                    crossAxisSpacing: 20.sp,
+                    mainAxisSpacing: 10.sp,
+                  ),
+                  itemCount: 15,
+                  itemBuilder: (context, index) {
+                    return Stack(
+                      children: [
+                        ShaderMask(
+                          shaderCallback: (Rect bounds) {
+                            return const LinearGradient(
+                              colors: [
+                                Color(0xffFAA677),
+                                Color.fromARGB(255, 255, 198, 164),
+                              ],
+                            ).createShader(bounds);
+                          },
+                          blendMode: BlendMode.srcATop,
+                          child: Image.asset('assets/icons/octagon.png'),
+                        ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: Icon(
+                            Icons.done,
+                            color: white,
+                            size: 15.sp,
+                          ),
+                        )
+                      ],
+                    );
+                  },
+                ),
+              ),
             ),
           ),
         );
