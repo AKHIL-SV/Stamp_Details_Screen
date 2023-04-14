@@ -32,8 +32,10 @@ class HomePage extends StatelessWidget {
           ),
         ),
         actions: [
-          Icon(
-            Icons.stop_circle_outlined,
+          ImageIcon(
+            const AssetImage(
+              'assets/icons/minus.png',
+            ),
             size: 24.sp,
           ),
           SizedBox(
