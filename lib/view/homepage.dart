@@ -95,6 +95,76 @@ class HomePage extends StatelessWidget {
                   top: Radius.circular(22.sp),
                 ),
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 247.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 8.sp,
+                      horizontal: 16.sp,
+                    ),
+                    child: Text(
+                      'スタンプ獲得履歴',
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: black,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: ListView.separated(
+                      padding: EdgeInsets.symmetric(horizontal: 16.sp),
+                      itemCount: 5,
+                      separatorBuilder: (context, index) =>
+                          const Divider(thickness: 1),
+                      itemBuilder: (context, index) {
+                        return SizedBox(
+                          height: 62.sp,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                dates[index],
+                                style: TextStyle(
+                                  fontSize: 12.sp,
+                                  color: gray,
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'スタンプを獲得しました。',
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w400,
+                                      color: darkGray,
+                                    ),
+                                  ),
+                                  Text(
+                                    '1 個',
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: darkGray,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
             ),
           )
         ],
