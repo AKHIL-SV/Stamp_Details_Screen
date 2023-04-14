@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 56.sp,
         title: Text(
           'スタンプカード詳細',
           style: TextStyle(
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        leadingWidth: 56.w,
+        leadingWidth: 56.sp,
         leading: Container(
           margin: EdgeInsets.only(left: 16.w),
           decoration: const BoxDecoration(
@@ -32,11 +33,11 @@ class HomePage extends StatelessWidget {
           ),
         ),
         actions: [
-          ImageIcon(
-            const AssetImage(
-              'assets/icons/minus.png',
-            ),
-            size: 24.sp,
+          Image.asset(
+            'assets/icons/minus.png',
+            width: 24.w,
+            fit: BoxFit.contain,
+            color: white,
           ),
           SizedBox(
             width: 19.w,
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.sp),
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -95,22 +96,22 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: white,
                 borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(22.sp),
+                  top: Radius.circular(22.r),
                 ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 247.h,
+                    height: 247.sp,
                     child: Stack(
                       children: [
                         const Expanded(
                           child: ScrollCard(),
                         ),
                         Positioned(
-                          bottom: 0.sp,
-                          right: 35.sp,
+                          bottom: 0.h,
+                          right: 35.w,
                           child: Text(
                             '2 / 2枚目',
                             style: TextStyle(
@@ -125,8 +126,8 @@ class HomePage extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      vertical: 8.sp,
-                      horizontal: 16.sp,
+                      vertical: 8.h,
+                      horizontal: 16.w,
                     ),
                     child: Text(
                       'スタンプ獲得履歴',
@@ -139,7 +140,7 @@ class HomePage extends StatelessWidget {
                   ),
                   Expanded(
                     child: ListView.separated(
-                      padding: EdgeInsets.symmetric(horizontal: 16.sp),
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
                       itemCount: 5,
                       separatorBuilder: (context, index) =>
                           const Divider(thickness: 1),

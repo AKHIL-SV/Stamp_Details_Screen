@@ -14,13 +14,14 @@ class ScrollCard extends StatelessWidget {
       itemBuilder: (context, index) {
         return Container(
           width: 317.w,
+          height: 199.sp,
           alignment: Alignment.center,
           padding: EdgeInsets.only(right: 8.sp),
           child: Material(
             elevation: 4,
             borderRadius: BorderRadius.circular(24.sp),
             child: Container(
-              height: 199.h,
+              height: 199.sp,
               width: 317.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24.sp),
@@ -30,47 +31,79 @@ class ScrollCard extends StatelessWidget {
                 vertical: 23.sp,
                 horizontal: 19.sp,
               ),
-              child: Expanded(
-                child: GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 5,
-                    crossAxisSpacing: 20.sp,
-                    mainAxisSpacing: 10.sp,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      starIcon(),
+                      starIcon(),
+                      starIcon(),
+                      starIcon(),
+                      starIcon()
+                    ],
                   ),
-                  itemCount: 15,
-                  itemBuilder: (context, index) {
-                    return Stack(
-                      children: [
-                        ShaderMask(
-                          shaderCallback: (Rect bounds) {
-                            return const LinearGradient(
-                              colors: [
-                                Color(0xffFAA677),
-                                Color.fromARGB(255, 255, 198, 164),
-                              ],
-                            ).createShader(bounds);
-                          },
-                          blendMode: BlendMode.srcATop,
-                          child: Image.asset('assets/icons/octagon.png'),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Icon(
-                            Icons.done,
-                            color: white,
-                            size: 15.sp,
-                          ),
-                        )
-                      ],
-                    );
-                  },
-                ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      starIcon(),
+                      starIcon(),
+                      starIcon(),
+                      starIcon(),
+                      starIcon()
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      starIcon(),
+                      starIcon(),
+                      starIcon(),
+                      starIcon(),
+                      starIcon()
+                    ],
+                  )
+                ],
               ),
             ),
           ),
         );
       },
+    );
+  }
+
+  Widget starIcon() {
+    return Stack(
+      children: [
+        ShaderMask(
+          shaderCallback: (Rect bounds) {
+            return const LinearGradient(
+              colors: [
+                Color(0xffFAA677),
+                Color.fromARGB(255, 255, 198, 164),
+              ],
+            ).createShader(bounds);
+          },
+          blendMode: BlendMode.srcATop,
+          child: Image.asset(
+            'assets/icons/octagon.png',
+            width: 40.w,
+            fit: BoxFit.contain,
+          ),
+        ),
+        Positioned(
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          child: Icon(
+            Icons.done,
+            color: white,
+            size: 18.sp,
+          ),
+        )
+      ],
     );
   }
 }
