@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stamp_details/constant.dart';
+import 'package:stamp_details/view/widgets/scroll_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -98,8 +99,27 @@ class HomePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 247.h,
+                    child: Stack(
+                      children: [
+                        const Expanded(
+                          child: ScrollCard(),
+                        ),
+                        Positioned(
+                          bottom: 0.sp,
+                          right: 35.sp,
+                          child: Text(
+                            '2 / 2枚目',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w400,
+                              color: darkGray,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
