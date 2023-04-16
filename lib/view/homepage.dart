@@ -107,9 +107,7 @@ class HomePage extends StatelessWidget {
                     height: 247.sp,
                     child: Stack(
                       children: [
-                        const Expanded(
-                          child: ScrollCard(),
-                        ),
+                        const ScrollCard(),
                         Positioned(
                           bottom: 0.h,
                           right: 35.w,
