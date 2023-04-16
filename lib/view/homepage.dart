@@ -44,55 +44,56 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Mer キッチン',
-                  style: TextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w700,
-                    color: white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Mer キッチン',
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: white,
+                    ),
                   ),
-                ),
-                Row(
-                  children: [
-                    Text(
-                      '現在の獲得数 ',
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        color: white,
+                  Row(
+                    children: [
+                      Text(
+                        '現在の獲得数 ',
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: white,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '30 ',
-                      style: TextStyle(
-                        fontSize: 28.sp,
-                        fontWeight: FontWeight.w700,
-                        color: white,
+                      Text(
+                        '30 ',
+                        style: TextStyle(
+                          fontSize: 28.sp,
+                          fontWeight: FontWeight.w700,
+                          color: white,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '個',
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
-                        color: white,
+                      Text(
+                        '個',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w700,
+                          color: white,
+                        ),
                       ),
-                    ),
-                  ],
-                )
-              ],
+                    ],
+                  )
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: 32.h),
-          Expanded(
-            child: Container(
+            SizedBox(height: 32.h),
+            Container(
+              height: 700.sp,
               decoration: BoxDecoration(
                 color: white,
                 borderRadius: BorderRadius.vertical(
@@ -138,7 +139,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
+                  SizedBox(
+                    height: 358.sp,
                     child: ListView.separated(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       itemCount: 5,
@@ -188,9 +190,9 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
